@@ -1,0 +1,105 @@
+@import "../../styles/mixins.scss";
+
+.blog {
+  padding-block: 8rem 5rem;
+
+  h3 {
+    position: relative;
+    padding-bottom: 2rem;
+    color: #dcb142;
+    &:after {
+      height: 3px;
+      width: 8rem;
+      background-color: #dcb142;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    width: 50%;
+    margin-inline: auto;
+    margin-bottom: 3.5rem;
+
+    p {
+      color: #dcb142;
+    }
+
+    @include respond(tab-port) {
+      width: 70%;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    padding: 1.3rem;
+    box-shadow: 0 0 40px 5px rgba(255, 255, 255, 0.2);
+    background: rgba(220, 177, 66, 0.8);
+    border-radius: 2.5rem;
+    cursor: pointer;
+  }
+
+  &__title {
+    margin: 1rem 0;
+    font-size: 22px;
+    font-weight: 500;
+    @include respond(tab-land) {
+      font-size: 18px;
+    }
+  }
+
+  img {
+    width: 100%;
+    border-radius: 1.5rem;
+    height: 350px;
+    object-fit: cover;
+
+    @include respond(tab-land) {
+      height: 250px;
+    }
+
+    @include respond(phone) {
+      height: 100%;
+    }
+  }
+
+  h6 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__btn {
+    width: fit-content;
+    margin-inline: auto;
+    margin-top: 4rem;
+
+    .button-primary {
+      &:hover {
+        background: #dcb142;
+        color: #000;
+      }
+    }
+  }
+}

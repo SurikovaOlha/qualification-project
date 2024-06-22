@@ -1,0 +1,151 @@
+@import "../../styles/mixins.scss";
+
+.features {
+  padding-block: 4.5rem;
+  background: rgba(220, 177, 66, 0.8);
+  position: relative;
+
+  &__text {
+    text-align: center;
+    width: 50%;
+    margin-inline: auto;
+    margin-bottom: 3rem;
+
+    h3 {
+      position: relative;
+      color: #fff;
+      padding-bottom: 2rem;
+      &:after {
+        height: 3px;
+        width: 8rem;
+        background-color: #fff;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
+
+    p {
+      color: #fff;
+    }
+
+    @include respond(tab-port) {
+      width: 70%;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+    }
+
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+  }
+
+  &__feature {
+    text-align: center;
+    border-radius: 30px;
+    padding: 3rem 1.2rem;
+    grid-area: span 1 / span 1 / span 1/ span 1;
+    display: flex;
+    flex-direction: column;
+
+    img {
+      margin-inline: auto;
+      margin-bottom: 1.5rem;
+      max-width: 320px;
+      border-radius: 1rem 1rem 0 0;
+
+      @include respond(tab-port) {
+        max-width: 500px;
+      }
+
+      @include respond(phone) {
+        max-width: 250px;
+      }
+    }
+
+    h4 {
+      margin-bottom: 0.8rem;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #dcb142;
+    }
+
+    .navbar__btn {
+      background-color: #dcb142;
+      color: #fff;
+      bottom: 1rem;
+      margin-top: auto;
+
+      &:hover {
+        color: #dcb142;
+        background-color: #fff;
+      }
+
+      @include respond(tab-port) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    @include respond(tab-port) {
+      justify-content: center;
+    }
+
+    @include respond(tab-port) {
+      padding: 1.3rem;
+      border-radius: 0.8rem;
+    }
+  }
+
+  &__feature:nth-child(5) {
+    border-radius: 30px;
+
+    @include respond(tab-port) {
+      border-radius: 0.8rem;
+    }
+  }
+
+  .dark-feature {
+    background-color: #fff;
+    color: #000;
+  }
+
+  .white-feature {
+    background-color: #fff;
+    .navbar__btn {
+      background: #dcb142;
+      color: #fff;
+      &:hover {
+        color: #000;
+        background-color: #dcb142;
+      }
+    }
+
+    @include respond(tab-port) {
+      background-color: #fff;
+    }
+  }
+
+  .dark-feature-title,
+  .white-feature-title{
+    color: #dcb142;
+  }
+}

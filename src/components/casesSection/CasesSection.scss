@@ -1,0 +1,164 @@
+@import "../../styles/mixins.scss";
+
+.cases {
+  padding-block: 4rem;
+  background: rgba(0, 0, 0, 0.6);
+
+  h3 {
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    margin: 0 0 2rem 0;
+    padding: 2rem 0;
+    position: relative;
+
+    &:after {
+      height: 3px;
+      width: 8rem;
+      background-color: #fff;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+
+  p {
+    color: #dcb142;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  &__card {
+    padding: 2rem;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,.5);
+      z-index: -1;
+    }
+
+    h5 {
+      font-size: 30px;
+      color: #fff;
+      font-weight: 600;
+      padding: 2rem 0;
+    }
+
+    p {
+      color: #dcb142;
+      font-weight: 600;
+    }
+
+    &-detail {
+      background: rgb(0,0,0);
+      padding: 0 2rem;
+      position: absolute;
+      height: 100%;
+      overflow: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      opacity: 0;
+      transition: 0.5s;
+
+      p,
+      li {
+        color: #fff;
+        line-height: 2.5;
+        text-align: left;
+        padding: 1rem 0;
+      }
+
+      p + p {
+        padding: 0;
+      }
+
+      ul {
+        li {
+          list-style: circle;
+          margin-left: 2rem;
+        }
+      }
+
+      span {
+        color: #dcb142;
+        font-weight: 600;
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+      padding: 2rem 0;
+    }
+  }
+
+  .card__info {
+    text-align: center;
+
+    svg{
+      height: 70px;
+      width: 70px;
+    }
+  }
+
+  &__container {
+    margin-top: 3.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.1rem;
+
+    .bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -5;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+      align-items: center;
+      justify-items: center;
+    }
+  }
+
+  .cases__more {
+    .cases__card-detail{
+
+    }
+    &:hover .cases__card-detail {
+      opacity: 1;
+    }
+    .text {
+      margin: 3rem;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+
+      svg {
+        margin-right: 1rem;
+      }
+
+      @include respond(phone) {
+        margin: 1rem;
+        padding: 1rem;
+      }
+    }
+  }
+}

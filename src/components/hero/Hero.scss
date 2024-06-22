@@ -1,0 +1,97 @@
+@import "../../styles/mixins.scss";
+
+.hero {
+  padding-block: 6rem;
+  background-image: url("../../assets/banner-1.png");
+  background-size: cover;
+
+  &__left {
+    max-width: 70%;
+
+    @include respond(tab-port) {
+      max-width: 100%;
+    }
+  }
+
+  &__container {
+    h1 {
+      font-style: italic;
+      padding: 2rem 0;
+      position: relative;
+      margin-bottom: 3rem;
+
+      &:after {
+        height: 3px;
+        width: 8rem;
+        background-color: #dcb142;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    p {
+      color: #fff;
+    }
+
+    .description {
+      .wrap {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+      }
+
+      .check-sign {
+        position: absolute;
+        background: #dcb142;
+      }
+
+      #check-part-1 {
+        width: 20px;
+        height: 5px;
+        transform:rotate(45deg);
+        top: 20px;
+      }
+
+      #check-part-2 {
+        width: 35px;
+        height: 5px;
+        transform: rotate(-45deg);
+        left: 9px;
+        top: 15px;
+      }
+
+      p {
+        margin-left: 50px;
+      }
+    }
+
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__btn-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+
+    .navbar__btn {
+      @include respond(tab-port) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    @include respond(tab-port) {
+      justify-content: center;
+    }
+  }
+
+  .img-1 {
+    width: 100%;
+  }
+}
